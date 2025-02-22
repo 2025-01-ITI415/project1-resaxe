@@ -68,13 +68,13 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FlowSpeed: 0.02
-    - _FoamDensity: 20
+    - _FoamDensity: 10
     - _FoamSpeed: 1
     - _FoamThickness: 5
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MaxHeight: 0.705
+    - _MaxHeight: 0.604
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -83,15 +83,15 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveHeight: 1
+    - _WaveHeight: 0.5
     - _WaveSpread: 10
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlowDirection: {r: 0.5, g: 1, b: 0, a: 0}
-    - _FoamColor: {r: 0.7197261, g: 1.3041189, b: 1.3041189, a: 0}
-    - _WaterColor: {r: 0.03706836, g: 0.1294783, b: 0.4622642, a: 0}
+    - _FoamColor: {r: 0.58526164, g: 0.79774714, b: 0.9056604, a: 0}
+    - _WaterColor: {r: 0.022027414, g: 0.19398196, b: 0.4245283, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5468708280619413010
 MonoBehaviour:
