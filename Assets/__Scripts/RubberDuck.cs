@@ -20,23 +20,23 @@ public class RubberDuck : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            transform.rotation = Quaternion.Euler(-90f, -90f, 0f);
-            Move(Vector3.left);
+            transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
+            Move(Vector3.forward);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            transform.rotation = Quaternion.Euler(-90f, -90f, 180f);
-            Move(Vector3.right);
+            transform.rotation = Quaternion.Euler(-90f, 0f, 180f);
+            Move(Vector3.back);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            transform.rotation = Quaternion.Euler(-90f, -90f, 90f);
-            Move(Vector3.forward);
+            transform.rotation = Quaternion.Euler(-90f, 0f, 90f);
+            Move(Vector3.right);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.rotation = Quaternion.Euler(-90f, -90f, -90f);
-            Move(Vector3.back);
+            transform.rotation = Quaternion.Euler(-90f, 0f, -90f);
+            Move(Vector3.left);
         }
     }
 
