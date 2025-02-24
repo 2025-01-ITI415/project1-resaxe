@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SafeZone
+  - Goal
+  - Death
+  - LeftBarrier
+  - RightBarrier
+  - BottomBarrier
   layers:
   - Default
   - TransparentFX

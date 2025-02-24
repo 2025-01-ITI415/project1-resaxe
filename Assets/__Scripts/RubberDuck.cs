@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class RubberDuck : MonoBehaviour
 {
@@ -40,11 +43,26 @@ public class RubberDuck : MonoBehaviour
         }
     }
 
-
     private void Move(Vector3 direction)
     {
         transform.position += direction*4;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // seperate barrier tags because i couldnt get one if statement to work for all of them
+        if (other.gameObject.CompareTag("LeftBarrier"))
+        {
+            Move(Vector3.right);
+        }
+        else if (other.gameObject.CompareTag("RightBarrier"))
+        {
+            Move(Vector3.left);
+        }
+        else if (other.gameObject.CompareTag("BottomBarrier"))
+        {
+            Move(Vector3.forward);
+        }
+    }
 
 }
