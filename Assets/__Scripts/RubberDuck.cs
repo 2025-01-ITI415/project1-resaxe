@@ -15,12 +15,16 @@ public class RubberDuck : MonoBehaviour
     public Text lives;
     public int numLives = 5;
     public Text loseText;
-
+    public Text winText;
+    public int numSaved = 0;
+    public Text savedDucks;
 
     // Start is called before the first frame update
     void Start()
     {
         loseText.text = " ";
+        winText.text = " ";
+        //savedDucks.text = "Ducks Saved: " + numSaved.ToString();
 
         numLives = 5;
         lives.text = "Lives: " + numLives.ToString();
@@ -56,11 +60,19 @@ public class RubberDuck : MonoBehaviour
         if (falling == true)
         {
             Death();
+            numLives--;
         }
 
         if (numLives == 0)
         {
             loseText.text = "You Lose!";
+            enabled = false;
+        }
+
+
+        if (numSaved == 3)
+        {
+            winText.text = "You Win!";
             enabled = false;
         }
 
@@ -80,7 +92,6 @@ public class RubberDuck : MonoBehaviour
 
         Invoke(nameof(Respawn), 1f);
 
-        numLives--;
         lives.text = "Lives: " + numLives.ToString();
     }
 
@@ -107,7 +118,12 @@ public class RubberDuck : MonoBehaviour
         {
             Move(Vector3.forward);
         }
-        
+        else if (collision.gameObject.CompareTag("Finish"))
+        {
+            numSaved++;
+            //savedDucks.text = "Ducks Saved: " + numSaved.ToString();
+        }
+
     }
 
     // the docks and all logs have a safe zone tag, this checks if its touching a log or dock

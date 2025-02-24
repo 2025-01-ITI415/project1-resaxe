@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duck: {fileID: 3143497893588641248}
+  winText: {fileID: 0}
+  savedDucks: {fileID: 0}
 --- !u!1001 &3143497893588513164
 PrefabInstance:
   m_ObjectHideFlags: 0
