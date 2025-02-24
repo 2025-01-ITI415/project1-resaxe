@@ -86,6 +86,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7cb3d00fb0177e4f8a1213f3c556448, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8359765884105310051}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7cb3d00fb0177e4f8a1213f3c556448, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7162943686042875968}
   m_SourcePrefab: {fileID: 100100000, guid: d7cb3d00fb0177e4f8a1213f3c556448, type: 3}
 --- !u!4 &2864987269109008954 stripped
 Transform:
@@ -118,6 +121,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.25, y: 0.25, z: 1.25}
   m_Center: {x: 0.00000008940697, y: 0, z: -0.00000008940697}
+--- !u!114 &7162943686042875968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209283201481707648}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5521ef115412603418f3b5e9509a737b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duck: {fileID: 3143497893588641248}
 --- !u!1001 &3143497893588513164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,7 +144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 136300, guid: 47eccfdaaa8490246bb90d54bab6ccbd, type: 3}
       propertyPath: m_Name
-      value: RubberDuck
+      value: GoalDuck
       objectReference: {fileID: 0}
     - target: {fileID: 136300, guid: 47eccfdaaa8490246bb90d54bab6ccbd, type: 3}
       propertyPath: m_IsActive

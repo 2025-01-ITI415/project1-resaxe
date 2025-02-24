@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class RubberDuck : MonoBehaviour
@@ -11,14 +12,21 @@ public class RubberDuck : MonoBehaviour
     public Vector3 startPosition;
     public Quaternion startRotation;
     public Boolean falling = false;
-
+    public Text lives;
+    public int numLives = 5;
+    public Text loseText;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        loseText.text = " ";
+
+        numLives = 5;
+        lives.text = "Lives: " + numLives.ToString();
         startPosition = transform.position;
         startRotation = transform.rotation;
+        Respawn();
     }
 
     // Update is called once per frame
@@ -47,8 +55,13 @@ public class RubberDuck : MonoBehaviour
 
         if (falling == true)
         {
-            gameObject.transform.SetPositionAndRotation(startPosition, startRotation);
-            falling = false;
+            Death();
+        }
+
+        if (numLives == 0)
+        {
+            loseText.text = "You Lose!";
+            enabled = false;
         }
 
     }
@@ -56,6 +69,26 @@ public class RubberDuck : MonoBehaviour
     private void Move(Vector3 direction)
     {
         transform.position += direction*4;
+    }
+
+    private void Death()
+    {
+        transform.position = startPosition;
+        transform.rotation = startRotation;
+        falling = false;
+        enabled = false;
+
+        Invoke(nameof(Respawn), 1f);
+
+        numLives--;
+        lives.text = "Lives: " + numLives.ToString();
+    }
+
+    public void Respawn()
+    {
+        transform.position = startPosition;
+        transform.rotation = startRotation;
+        enabled = true;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -74,8 +107,6 @@ public class RubberDuck : MonoBehaviour
         {
             Move(Vector3.forward);
         }
-
-
         
     }
 
