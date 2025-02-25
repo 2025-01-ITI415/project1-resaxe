@@ -59,8 +59,8 @@ public class RubberDuck : MonoBehaviour
 
         if (falling == true)
         {
-            Death();
             numLives--;
+            Death();
         }
 
         if (numLives == 0)
